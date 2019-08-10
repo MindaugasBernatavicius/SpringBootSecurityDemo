@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title from index.html</title>
+</head>
+<body>
+    <div>
+        <p>Hello from index.html</p>
+    </div>
+    <!-- templates\index.html -->
+    <div>
+        <a th:href="@{profile}">Go to profile page</a><br>
+        <a th:href="@{admin}">Go to admin page</a><br>
+        <a th:href="@{power_user}">Go to power user page</a><br>
+        <div class="button-group" sec:authorize="isAuthenticated()">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
